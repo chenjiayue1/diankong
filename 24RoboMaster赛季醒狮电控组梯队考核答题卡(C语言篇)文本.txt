@@ -1,0 +1,316 @@
+# ***24RoboMaster醒狮电控组梯队考核答题卡**
+>-------------------------------------------------------------------------------------------------------------------------***C语言篇***
+
+
+## PART I
+```c
+Q1.
+```
+D
+```c
+Q2.
+```
+B
+```c
+Q3.
+```
+C
+```c
+Q4.
+```
+C
+
+```c
+Q5.	
+```
+D
+```c
+Q6.
+```
+B
+```c
+Q7.
+```
+5
+```c
+Q8.
+```
+B
+```c
+Q9.
+```
+D
+```c
+Q10.
+```
+
+break语句用于完全终止循环，即在循环体内执行break语句后整个循环将立即终止
+而continue语句则是用于跳过当前循环中的某些语句，直接进入下一次循环执行
+## PART II
+### ***Q11:举例出C语言中的数据类型（越多越好）***
+```c
+C语言中的数据类型包括: 
+1.整型:int、 short、long、long long、unsigned int、 unsigned sh 
+ort,unsigned long、unsigned long long。
+2.字符型:char. 
+3.浮点型:float,double、long double. 
+4.布尔型:_Bool. 
+5.:_Complex。
+6.虚数型:_Imaginary。
+除此之外，C语言还支持结构体、联合体和枚举类型。
+
+```
+
+
+### ***Q12:使用 `while`自定义一个死循环函数***
+```cvoid infiniteLoop(){
+   while(1){
+   
+   }
+ }
+
+```
+### ***Q13：解释 `VAL_LIMIT`  ，并计算 `Alpha` 、`Beta`、`Gamma` 的最终值***
+```c
+vAL_LIMIT是一个宏定义，用于限制变量的取值范围。如果变量的值小于最小值，则将其设置为最小值；如果变量的值大于最大值，则将其设置为最大值。
+这个宏定义可以用于保证变量的取值范围在一定范围内，避免出现不合理的值。代码中给出来的值“Alpha"初始值为1，不满足小于最小值的条件
+程序自动跳出，故最终值为1，以此类推，Beta和Gamma的值分别为43和-19
+
+```
+
+### ***Q14:于 `笛卡尔坐标系` 中表示 `now1`与 `now2`的`变化曲线`***
+```c
+不会画图
+```
+
+### ***Q15:请`自定义变量`，并巧妙利用 `ramp_t`, `ramp_init`, `ramp_calc` 实现`自定义变量` 的 `斜坡式下降`与`斜坡式增长`***
+```c
+
+```
+```
+
+### ***Q16:现有名为 `HAL_GetTick` 的时间测量函数,其单位为 `ms,请利用 `HAL_GetTick`函数返回值的特殊性质,实现程序 `1ms`定时打印`"Hello,world !"` ( tip:① 定义变量与函数配合获得∆t值；② if语句)***
+```c
+float HAL_GetTick(void)
+{
+
+  return uwTick;
+}
+```
+### ***Q17:使用名为 `callback` 的 `函数指针` 初始化 `alpha`与 `beta` 的值***
+```c
+
+```
+
+### ***Q18:请你初始化 `alpha `的值为`` gama`` 的`低八位 `、`beta `的值为` gama` 的`高八位`***
+```c
+
+```
+
+### ***∆Q19:下图代码为PID控制算法公式 ,请 `自定义结构体` ,并利用 `pid_t`、`PID_Struct_Init`、`pid_calc` 分别初始化 `kp`、`ki`、`kd`、`maxout`、`integral_limit` 的值  , 并得到经 `pid_calc`计算后的`最终值 `(tip: 可令 kp = 1 ,ki = 0.01,kd = 20 ,maxout = 500,integral_limit = 100 并将其传入 PID_Struct_Init 进行初始化,最后调用 pid_calc 得到最终值)`***
+```c
+
+```
+
+## PART III
+### ***Q20：题目：请自定义一个结构体类型 `"Student"`，包含以下成员变量` (特殊要求：用结构体与指针相关内容解决)`***
+
+#include<stdio.h>
+typedef struct{
+    
+    char name[20];
+    int  xuehao ;
+    float  score;}student;
+int main()
+{
+	student t;
+	
+	scanf("%d",&t.xuehao);
+	scanf("%f",&t.score);
+	scanf("%s",&t.name);
+	
+	printf("%d %f %s\n",t.xuehao,t.score,t.name);
+	return 0;
+}
+
+
+```c
+姓名（字符串类型）
+学号（整型）
+成绩（单精度浮点型）
+请编写一个函数，接收一个指向 "Student" 结构体数组的指针，将每个学生的姓名、学号和成绩输出到屏幕上。
+```
+### ***Q21：请编写一个函数，接收一个整型数组和数组长度作为参数，找出数组中的最大值，并通过指针将最大值返回给调用函数。`(特殊要求:利用结构体与指针相关内容解决)`***
+```c
+#include <stdio.h>
+int main() {
+    int i = 0;
+    int n = 0;
+    int max = 0;
+    int arr[5] = {8, 11, 4, 2, 6};
+    int length = sizeof(arr) / sizeof(arr[0]);
+    for (n = 0; n< 10; n++)
+    scanf("%d", &arr[n]);
+    max = arr[0];
+    for (i = 1; i < 10; i++)
+      if (max < arr[i])
+      {
+        max = arr[i];
+       }
+       printf("最大值：%d\n", max);
+    return 0;
+    }
+```
+
+
+### ***Q22：请编写一个void函数，使其限制电机转速在-4000~4000范围内 `(特殊要求:在不用全局变量的情况下完成 )`***
+```c
+
+```
+
+### ***Q23：已知 `云台` 有四种状态，分别为`GIMBAL_INIT_NEVER`，`GIMBAL_INIT_DONE，NO_ACTION`，`IS_ACTION` 四种，请你定义一个`枚举结构体gimbal_state_t`放入这四种状态；假设`现在`云台状态为`GIMBAL_INIT_DONE`，请你写出程序,使其输出`当前状态`的枚举值 `(特殊要求:利用枚举)`***
+```c
+
+```
+## PART IV
+### ***Q24：请定义一个`枚举类型"CourseType"`，包含以下选项：`数学`、`英语`、`物理`、`化学`。定义一个`结构体类型"Course"`，包含以下成员：`课程类型（type）：枚举类型"CourseType"` ;`学分（credit）：整数类型` ;`成绩（score）：浮点数类型` 。并声明一个`指向"Course"结构体的指针"courses"` 。编写一个`函数"addCourse()"`，该函数接收用户输入的`课程类型、学分和成绩`，并将其添加到`"courses"所指向的结构体数组`中。如果数组已`满`(组数为10)，则提示`错误信息`。编写一个`函数"calculateGPA()"`，该函数接收`"courses"指针和数组长度作为参数`，计算所有课程的平均学分绩点（GPA）。学分绩点按照以下规则计算：90-100分为A，4.0绩点；80-89分为B，3.0绩点；70-79分为C，2.0绩点；60-69分为D，1.0绩点；低于60分为F，0绩点。在主函数中，首先让用户输入课程数量，调用"addCourse()"函数让用户依次输入课程信息，最后`调用"calculateGPA()"函数`计算`平均学分绩点`并`打印`出来。***
+```c
+
+```
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+
+
+
+
+
+
+
+
+​								  ***@醒狮机器人实验室电控组***
+
